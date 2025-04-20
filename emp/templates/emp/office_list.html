@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office List</title>
+</head>
+<body>
+    <h2>Office List</h2>
+<a href="{% url 'add_office' %}">Add New Office</a>
+<ul>
+  {% for office in offices %}
+    <li>
+      <a href="{% url 'office_detail' office.pk %}">{{ office.name }}</a> |
+      <a href="{% url 'edit_office' office.pk %}">Edit</a> |
+      <a href="{% url 'delete_office' office.pk %}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
