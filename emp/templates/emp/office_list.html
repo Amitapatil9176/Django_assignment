@@ -11,9 +11,10 @@
 <ul>
   {% for office in offices %}
     <li>
-      <a href="{% url 'office_detail' office.pk %}">{{ office.name }}</a> |
+      <a href="{% url 'office_detail' office.pk %}">{{ office.name }}</a> <br>
       <a href="{% url 'edit_office' office.pk %}">Edit</a> |
       <a href="{% url 'delete_office' office.pk %}">Delete</a>
+      <hr>
     </li>
   {% endfor %}
 </ul>
